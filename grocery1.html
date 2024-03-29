@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grocery Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        /* Adjusted style for the navbar */
+        .navbar {
+          transition: transform 0.3s;
+        }
+
+        .navbar:hover {
+          transform: scale(1);
+        }
+
+        /* Fix for preventing navbar buttons from getting bigger on hover */
+        .navbar-nav .nav-link {
+          transition: transform 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+          transform: scale(1);
+          color: black;
+        }
+
+        /* Adjusted card size for responsiveness */
+        .card {
+          width: 100%; /* Adjusted to full width on small screens */
+          margin-bottom: 20px; /* Added margin between cards */
+        }
+
+        .card img {
+          height: 250px; /* Changed to auto to maintain aspect ratio */
+        }
+        .custom-border{
+          text-align: center;
+          align-items: center;
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Search Bar -->
+        <form class="d-flex mb-2 mb-lg-0">
+            <input class="form-control me-2 custom-border" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light custom-border" type="submit">Search</button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light custom-border" href="about us.html">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a type="button" class="nav-link btn btn-outline-light custom-border" data-bs-toggle="modal"
+                        data-bs-target="#cartModal">View Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" type="button"
+                        class="nav-link btn btn-outline-light custom-border">Home Page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="shot">
+    <h2><i>Welcome To Grocery Section</i></h2>
+  </div>
+<br>
+  <br>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/image1.jpg" class="d-block w-100" >
+      </div>
+      <div class="carousel-item">
+        <img src="img/image2.jpg" class="d-block w-100" >
+      </div>
+      <div class="carousel-item">
+        <img src="img/image3.jpg" class="d-block w-100" >
+      </div>
+      <div class="carousel-item">
+        <img src="img/image4.jpg" class="d-block w-100" >
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col-md-4">
+        <div class="card custom-border">
+            <img src="img/surf excel detergent powder front load 6 kg.jpg" alt="Surf Excel Detergent Powder Front Load 6 kg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Surf Excel Detergent Powder Front Load 6 kg</h5>
+                <p class="card-price">Price: $20.99</p>
+                <label for="surfExcelDetergentPowderQuantity" class="quantity-label">Quantity:</label>
+                <input type="number" id="surfExcelDetergentPowderQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+                <button class="btn btn-primary" onclick="addToCart('Surf Excel Detergent Powder Front Load 6 kg', 20.99, 'surfExcelDetergentPowderQuantity')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+  
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/surf excel detergent powder.jpg" alt="Surf Excel Detergent Powder" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Surf Excel Detergent Powder</h5>
+            <p class="card-price">Price: $3.99</p>
+            <label for="surfExcelQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="surfExcelQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Surf Excel Detergent Powder', 3.99, 'surfExcelQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Surf Excel Matric Front Load Liquid Detergent 500 ml -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/surf excel matric front load liquid detergent 500 ml.webp" alt="Surf Excel Matric Front Load Liquid Detergent 500 ml" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Surf Excel Matric Front Load Liquid Detergent 500 ml</h5>
+            <p class="card-price">Price: $2.99</p>
+            <label for="surfExcelMatricQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="surfExcelMatricQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Surf Excel Matric Front Load Liquid Detergent 500 ml', 2.99, 'surfExcelMatricQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Surf Excel Washing Powder 35gr Pouch -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/surf excel washing powder 35gr pouch.jpg" alt="Surf Excel Washing Powder 35gr Pouch" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Surf Excel Washing Powder 35gr Pouch</h5>
+            <p class="card-price">Price: $0.35</p>
+            <label for="surfExcelWashingPowderQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="surfExcelWashingPowderQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Surf Excel Washing Powder 35gr Pouch', 0.35, 'surfExcelWashingPowderQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Surf Excel Washing Powder -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/Surf Excel Washing Powder.jpg" alt="Surf Excel Washing Powder" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Surf Excel Washing Powder</h5>
+            <p class="card-price">Price: $4.99</p>
+            <label for="surfExcelWashingPowder2Quantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="surfExcelWashingPowder2Quantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Surf Excel Washing Powder', 4.99, 'surfExcelWashingPowder2Quantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Basmati Rice 25 kg -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/basmati rice.jpg" alt="Basmati Rice 25 kg" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Basmati Rice 25 kg</h5>
+            <p class="card-price">Price: $45.99</p>
+            <label for="basmatiRiceQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="basmatiRiceQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Basmati Rice 25 kg', 45.99, 'basmatiRiceQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Lazzat Basmati Rice 25 kg -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/lazzat basmati rice.png" alt="Lazzat Basmati Rice 25 kg" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Lazzat Basmati Rice 25 kg</h5>
+            <p class="card-price">Price: $40.99</p>
+            <label for="lazzatBasmatiRiceQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="lazzatBasmatiRiceQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Lazzat Basmati Rice 25 kg', 40.99, 'lazzatBasmatiRiceQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Lazzat Basmati Rice 10 kg -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/lazzat basmati rice.png" alt="Lazzat Basmati Rice 10 kg" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Lazzat Basmati Rice 10 kg</h5>
+            <p class="card-price">Price: $35.99</p>
+            <label for="lazzatBasmatiRice10kgQuantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="lazzatBasmatiRice10kgQuantity" class="quantity-input" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Lazzat Basmati Rice 10 kg', 35.99, 'lazzatBasmatiRice10kgQuantity')">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  <!-- Wheat Flour 1 -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+      <img src="img/atta1.jpg" alt="Wheat Flour" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Wheat Flour (10 kg)</h5>
+        <p class="card-text">Price: $7.99</p>
+        <label for="wheatFlour1Quantity">Quantity:</label>
+        <input type="number" id="wheatFlour1Quantity" min="0.1" step="0.1" value="1">
+        <button class="btn btn-primary" onclick="addToCart('Wheat Flour (10 kg)', 7.99, 'wheatFlour1Quantity')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Wheat Flour 2 -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+      <img src="img/atta2.jpg" alt="Wheat Flour" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Wheat Flour (10 kg)</h5>
+        <p class="card-text">Price: $9.99</p>
+        <label for="wheatFlour2Quantity">Quantity:</label>
+        <input type="number" id="wheatFlour2Quantity" min="0.1" step="0.1" value="1">
+        <button class="btn btn-primary" onclick="addToCart('Wheat Flour (10 kg)', 9.99, 'wheatFlour2Quantity')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Wheat Flour 3 -->
+  <div class="col-md-4">
+    <div class="card custom-border">
+      <img src="img/atta1.jpg" alt="Wheat Flour" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Wheat Flour (10 kg)</h5>
+        <p class="card-text">Price: $12.99</p>
+        <label for="wheatFlour3Quantity">Quantity:</label>
+        <input type="number" id="wheatFlour3Quantity" min="0.1" step="0.1" value="1">
+        <button class="btn btn-primary" onclick="addToCart('Wheat Flour (10 kg)', 12.99, 'wheatFlour3Quantity')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card custom-border">
+      <img src="img/shan ghee1.jpg" alt="Wheat Flour" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">shan ghee 1 kg x 12</h5>
+        <p class="card-text">Price: $19.99</p>
+        <label for="shan ghee 112 ltr">Quantity:</label>
+        <input type="number" id="shan ghee 112 ltr" min="0.1" step="0.1" value="1">
+        <button class="btn btn-primary" onclick="addToCart('shan ghee 12 kg', 19.99, 'shan ghee 112 ltr')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card custom-border">
+      <img src="img/dalda ghee.jpg" alt="Wheat Flour" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">dalda ghee 1 kg x 5</h5>
+        <p class="card-text">Price: $17.99</p>
+        <label for="shan ghee 112 ltr">Quantity:</label>
+        <input type="number" id="shan ghee 112 ltr" min="0.1" step="0.1" value="1">
+        <button class="btn btn-primary" onclick="addToCart('dalda ghee 5kg', 17.99, 'shan ghee 112 ltr')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="checkout.html" class="btn btn-primary" onclick="processCheckout()">Proceed to Checkout</a>
+                    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script>
+  // Wait for the document to be ready
+  $(document).ready(function () {
+    // Find all images within cards
+    var cardImages = $(".card-img-top");
+
+    // Set a fixed height and width for all images
+    cardImages.css({
+      'height': '250px', // Set the desired height
+      'width': '100%', // Set the desired width to cover the container
+      'object-fit': 'cover' // Maintain aspect ratio and cover the entire container
+    });
+  });
+  </script>
+</body>
+</html>

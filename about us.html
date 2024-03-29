@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background-color: #ffc107;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about us.html">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="fruits_vegetables.html">Fruits and Vegetables</a></li>
+                        <li><a class="dropdown-item" href="clothes.html">Clothes</a></li>
+                        <li><a class="dropdown-item" href="stationary.html">Stationary</a></li>
+                        <li><a class="dropdown-item" href="Toys.html">Toys</a></li>
+                        <li><a class="dropdown-item" href="grocery1.html">Groceries</a></li>
+                        <li><a class="dropdown-item" href="crocery.html">Crocery</a></li>
+                        <li><a class="dropdown-item" href="cosmetics.html">Cosmetics</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Search Bar -->
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+    <em>
+        <h1 class="text-center">Welcome To Yahya Departmental store</h1>
+        <header>
+            <h2>About Us</h2>
+            <p>Your one-stop destination for quality products and exceptional shopping experiences.</p>
+        </header>
+
+        <section>
+            <h2>Our History</h2>
+            <p>Founded in 2015, our departmental store has been serving the community for [number] years. From our humble beginnings, we have grown into a trusted retail destination, offering a wide range of products to meet the diverse needs of our customers.</p>
+        </section>
+
+        <section>
+            <h2>Our Mission</h2>
+            <p>At Yahya's Departmental Store, our mission is to provide customers with a convenient and enjoyable shopping experience. We are committed to offering high-quality products, excellent customer service, and a welcoming environment for all our shoppers.</p>
+        </section>
+
+        <section>
+            <h2>Our Values</h2>
+            <ul>
+                <li>Customer Satisfaction: Putting our customers first is at the heart of everything we do.</li>
+                <li>Quality Products: We ensure that every product on our shelves meets the highest standards of quality.</li>
+                <li>Integrity: We conduct our business with honesty, transparency, and fairness.</li>
+                <li>Community Engagement: Supporting and contributing to the communities we serve.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Meet Our Team</h2>
+            <p>Our dedicated team is passionate about providing you with the best shopping experience. From our knowledgeable staff on the floor to the friendly faces at the checkout, we are here to assist you every step of the way.</p>
+        </section>
+
+        <footer>
+            <p>Contact us for more information: <a href="contact.html">Contact Page</a></p>
+        </footer>
+    </em>
+</div>
+
+<script>
+    function toggleTheme() {
+        var body = document.body;
+        body.dataset.bsTheme = (body.dataset.bsTheme === 'light') ? 'dark' : 'light';
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

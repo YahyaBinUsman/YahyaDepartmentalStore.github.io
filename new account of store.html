@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <style>
+    /* Custom styles for borders */
+    .custom-border {
+      border: 2px solid red;
+      transition: transform 0.3s;
+    }
+
+    .custom-border:hover {
+      transform: scale(1.1);
+      background-color: transparent; /* Change to your desired background color or set to transparent */
+      color: greenyellow; /* Change to your desired text color */
+    }
+
+    /* Adjusted style for the navbar to prevent it from getting bigger */
+    .navbar {
+      transition: transform 0.3s;
+    }
+
+    .navbar:hover {
+      transform: scale(1);
+    }
+
+    /* Fix for preventing navbar buttons from getting bigger on hover */
+    .navbar-nav .nav-link {
+      transition: transform 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body data-bs-theme="dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="store login page.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="fruits_vegetables.html">Fruits and Vegetables</a></li>
+              <li><a class="dropdown-item" href="clothes.html">Clothes</a></li>
+              <li><a class="dropdown-item" href="stationary.html">Stationary</a></li>
+              <li><a class="dropdown-item" href="Toys.html">Toys</a></li>
+              <li><a class="dropdown-item" href="grocery1.html">Groceries</a></li>
+              <li><a class="dropdown-item" href="crocery.html">Crocery</a></li>
+              <li><a class="dropdown-item" href="cosmetics.html">Cosmetics</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form action="#" method="post" onsubmit="return validateForm1()">
+              <h2 class="mb-3">Sign Up</h2>
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <div class="input-group">
+                  <input type="password" id="password" name="password" class="form-control" required>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword" onclick="togglePassword1()">Show</button>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+              </div>
+
+              <button type="button" class="btn btn-primary" onclick="submitForm()">Sign Up</button>
+            </form>
+            <div class="mt-3">
+              <a href="forgot_password.html" class="text-decoration-none">Forgot Password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword1() {
+      var passwordInput = document.getElementById('password');
+      var passwordIcon = document.getElementById('togglePassword');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordIcon.textContent = 'Hide';
+      } else {
+        passwordInput.type = 'password';
+        passwordIcon.textContent = 'Show';
+      }
+    }
+
+    function validateForm1() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (name.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+        alert('Please fill in all required details.');
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please enter matching passwords.');
+        return false;
+      }
+      return true;
+    }
+
+    function submitForm() {
+      if (validateForm1()) {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+</html>

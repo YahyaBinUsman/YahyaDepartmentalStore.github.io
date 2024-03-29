@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clothes Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        .custom-border {
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .custom-border:hover {
+            background-color: transparent;
+            color: greenyellow;
+        }
+
+        .search-bar {
+            border: 2px solid red;
+            border-radius: 5px;
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-border">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="new born.html">New Born</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="children.html">Childrens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teen.html">Teenagers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adult.html">Adults</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home Page</a>
+                    </li>
+                </ul>
+
+                <!-- Search Bar -->
+                <form class="d-flex">
+                    <input class="form-control me-2 custom-border search-bar" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-light custom-border" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <h2><b><i>Welcome to the Clothes Section</i></b></h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">New Born</h5>
+                        <p class="card-text">Explore our collection for newborns.</p>
+                        <a href="new born.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Childrens</h5>
+                        <p class="card-text">Discover clothing for children.</p>
+                        <a href="children.html" class="btn btn-primary">Discover</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Teenagers</h5>
+                        <p class="card-text">Find trendy outfits for teenagers.</p>
+                        <a href="teen.html" class="btn btn-primary">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Adults</h5>
+                        <p class="card-text">Browse our stylish clothing for adults.</p>
+                        <a href="adult.html" class="btn btn-primary">Browse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            var body = document.body;
+            body.dataset.bsTheme = (body.dataset.bsTheme === 'light') ? 'dark' : 'light';
+        }
+    </script>
+</body>
+
+</html>

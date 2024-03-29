@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crocery Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Adjusted style for the navbar */
+        .navbar {
+          transition: transform 0.3s;
+        }
+
+        .navbar:hover {
+          transform: scale(1);
+        }
+
+        /* Fix for preventing navbar buttons from getting bigger on hover */
+        .navbar-nav .nav-link {
+          transition: transform 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+          transform: scale(1);
+          color: black;
+        }
+
+        /* Adjusted card size for 3 cards in one row */
+        .card {
+          width: 100%; /* Adjusted to full width on small screens */
+          margin-bottom: 20px; /* Added margin between cards */
+        }
+
+        .card img {
+          height: 250px; /* Changed to auto to maintain aspect ratio */
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Search Bar -->
+        <form class="d-flex mb-2 mb-lg-0">
+            <input class="form-control me-2 custom-border" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light custom-border" type="submit">Search</button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light custom-border" href="about us.html">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a type="button" class="nav-link btn btn-outline-light custom-border" data-bs-toggle="modal"
+                        data-bs-target="#cartModal">View Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" type="button"
+                        class="nav-link btn btn-outline-light custom-border">Home Page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container mt-3 text-center">
+        <h2><b><i>Welcome To Crocery Section</i></b></h2>
+        <div class="row">
+            <!-- Stuffed Teddy Bear -->
+            <div class="col-md-4">
+                <div class="card custom-border">
+                    <img src="img/dinner set.jpg" alt="Stuffed Teddy Bear" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Dinner Set</h5>
+                        <p class="card-text">Price: $35.99</p>
+                        <label for="teddyQuantity">Quantity:</label>
+                        <input type="number" id="teddyQuantity" min="0.1" step="0.1" value="1">
+                        <button class="btn btn-primary" onclick="addToCart('Dinner set', 35.99, 'teddyQuantity')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lego Blocks -->
+            <div class="col-md-4">
+                <div class="card custom-border">
+                    <img src="img/vase.jpg" alt="Lego Blocks" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">beautiful Vase</h5>
+                        <p class="card-text">Price: $39.99</p>
+                        <label for="legoQuantity">Quantity:</label>
+                        <input type="number" id="legoQuantity" min="0.1" step="0.1" value="1">
+                        <button class="btn btn-primary" onclick="addToCart('beautiful Vase', 39.99, 'legoQuantity')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toy Animals -->
+            <div class="col-md-4">
+                <div class="card custom-border">
+                    <img src="img/plastic bowls.jpg" alt="Toy Animals" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">plastic bowls(7 pcs)</h5>
+                        <p class="card-text">Price: $5.99</p>
+                        <label for="toyAnimalsQuantity">Quantity:</label>
+                        <input type="number" id="toyAnimalsQuantity" min="0.1" step="0.1" value="1">
+                        <button class="btn btn-primary" onclick="addToCart('plastic bowls',5.99, 'toyAnimalsQuantity')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue with other toy items... -->
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body" id="cartItems">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="checkout.html" class="btn btn-primary" onclick="processCheckout()">Proceed to Checkout</a>
+                    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

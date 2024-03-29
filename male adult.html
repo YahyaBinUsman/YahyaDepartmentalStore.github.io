@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Male Adult Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Adjusted style for the navbar */
+        .navbar {
+          transition: transform 0.3s;
+        }
+
+        .navbar:hover {
+          transform: scale(1);
+        }
+
+        /* Fix for preventing navbar buttons from getting bigger on hover */
+        .navbar-nav .nav-link {
+          transition: transform 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+          transform: scale(1);
+          color: black;
+        }
+
+        /* Adjusted card size for 3 cards in one row */
+        .card {
+          width: 100%; /* Adjusted to full width on small screens */
+          margin-bottom: 20px; /* Added margin between cards */
+        }
+
+        .card img {
+          height: 250px; /* Changed to auto to maintain aspect ratio */
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Search Bar -->
+        <form class="d-flex mb-2 mb-lg-0">
+            <input class="form-control me-2 custom-border" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light custom-border" type="submit">Search</button>
+        </form>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light custom-border" href="about us.html">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a type="button" class="nav-link btn btn-outline-light custom-border" data-bs-toggle="modal"
+                        data-bs-target="#cartModal">View Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" type="button"
+                        class="nav-link btn btn-outline-light custom-border">Home Page</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </div>
+
+    <div class="container mt-3 text-center">
+        <h2><b><i>Adult Men Cloth Section</i></b></h2>
+
+        <div class="row">
+<div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/adult male1.jpg" alt="Male Adult Clothes" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Adult Male Clothes</h5>
+            <p class="card-text">Price: $23.99</p>
+            <label for="item1Size">Size:</label>
+            <select id="item1Size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="item1Quantity">Quantity:</label>
+            <input type="number" id="item1Quantity" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Male Adult Clothes', 23.99, 'item1Size', 'item1Quantity')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Item 2 -->
+<div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/adult male2.jpg" alt="Male Adult Clothes" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Male Adult Clothes</h5>
+            <p class="card-text">Price: $34.99</p>
+            <label for="item2Size">Size:</label>
+            <select id="item2Size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="item2Quantity">Quantity:</label>
+            <input type="number" id="item2Quantity" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Male Adult Clothes', 34.99, 'item2Size', 'item2Quantity')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Item 3 -->
+<div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/adult male3.jpg" alt="Male Adult Clothes" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Male Adult Clothes</h5>
+            <p class="card-text">Price: $59.99</p>
+            <label for="item3Size">Size:</label>
+            <select id="item3Size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="item3Quantity">Quantity:</label>
+            <input type="number" id="item3Quantity" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Male Adult Clothes', 59.99, 'item3Size', 'item3Quantity')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Item 4 -->
+<div class="col-md-4">
+    <div class="card custom-border">
+        <img src="img/adult male4.jpg" alt="Male Adult Clothes" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Male Adult Clothes</h5>
+            <p class="card-text">Price: $29.99</p>
+            <label for="item4Size">Size:</label>
+            <select id="item4Size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="item4Quantity">Quantity:</label>
+            <input type="number" id="item4Quantity" min="0.1" step="0.1" value="1">
+            <button class="btn btn-primary" onclick="addToCart('Male Adult Clothes', 29.99, 'item4Size', 'item4Quantity')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="checkout.html" class="btn btn-primary" onclick="processCheckout()">Proceed to Checkout</a>
+                    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addToCart(productName, basePrice, sizeInputId, quantityInputId) {
+            var size = document.getElementById(sizeInputId).value;
+            var quantity = parseFloat(document.getElementById(quantityInputId).value);
+    
+            if (isNaN(quantity) || quantity <= 0) {
+                alert("Please enter a valid quantity greater than zero.");
+                return;
+            }
+    
+            // Apply size-based percentage increase
+            var price = basePrice;
+            switch (size) {
+                case 'medium':
+                    price *= 1.1; // 10% increase for medium
+                    break;
+                case 'large':
+                    price *= 1.2; // 20% increase for large
+                    break;
+                case 'xl':
+                    price *= 1.3; // 30% increase for XL
+                    break;
+                // Add more cases for other sizes if needed
+            }
+    
+            var totalCost = (price * quantity).toFixed(2);
+    
+            var confirmed = confirm(`Are you sure you want to add ${quantity} units of ${productName} to the cart?`);
+            if (confirmed) {
+                // Add item directly to the existing cart array in script.js
+                addToCartInScriptJs(productName, basePrice, quantity, totalCost, size);
+                updateCart();
+                saveCartToLocalStorage();
+            }
+        }
+    
+        // Add this function to add items to the existing cart array in script.js
+        function addToCartInScriptJs(productName, price, quantity, totalCost, size) {
+            cart.push({ name: productName, price: price, quantity: quantity, cost: totalCost, section: 'clothes', size: size });
+        }
+        $(document).ready(function () {
+    // Find all images within cards
+    var cardImages = $(".card-img-top");
+
+    // Calculate the maximum height among all images
+    var maxHeight = Math.max.apply(null, cardImages.map(function () {
+      return $(this).height();
+    }).get());
+
+    // Set the height of all images to the maximum height
+    cardImages.height(maxHeight);
+  });
+    </script>
+    
+</body>
+
+</html>

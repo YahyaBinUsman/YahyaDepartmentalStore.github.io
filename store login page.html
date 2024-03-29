@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Login Page</title>
+    <style>
+        /* Custom styles for borders */
+        .custom-border {
+          border: 2px solid red;
+          transition: transform 0.3s;
+        }
+
+        .custom-border:hover {
+          transform: scale(1.1);
+          background-color: transparent; /* Change to your desired background color or set to transparent */
+          color: greenyellow; /* Change to your desired text color */
+        }
+
+        /* Adjusted style for the navbar to prevent it from getting bigger */
+        .navbar {
+          transition: transform 0.3s;
+        }
+
+        .navbar:hover {
+          transform: scale(1);
+        }
+
+        /* Fix for preventing navbar buttons from getting bigger on hover */
+        .navbar-nav .nav-link {
+          transition: transform 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+          transform: scale(1);
+        }
+    </style>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body data-bs-theme="dark">
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="fruits_vegetables.html">Fruits and Vegetables</a></li>
+              <li><a class="dropdown-item" href="clothes.html">Clothes</a></li>
+              <li><a class="dropdown-item" href="stationary.html">Stationary</a></li>
+              <li><a class="dropdown-item" href="Toys.html">Toys</a></li>
+              <li><a class="dropdown-item" href="grocery1.html">Groceries</a></li>
+              <li><a class="dropdown-item" href="crocery.html">Crocery</a></li>
+              <li><a class="dropdown-item" href="cosmetics.html">Cosmetics</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container mt-5">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-body">
+                <h5 class="card-title"><b><i>YAHYA DEPARTMENTAL STORE</i></b></h5>
+                <div class="form-group">
+                    <label for="emailOrPhone">Enter Email or Phone Number</label>
+                    <input type="text" class="form-control" id="emailOrPhone" placeholder="Email or Phone">
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword" onclick="togglePassword()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M8 2a12 12 0 0 0-7.5 2.69 1 1 0 0 0 1 1.56A10 10 0 0 1 8 4a10 10 0 0 1 6.5 2.25 1 1 0 0 0 1-1.56A12 12 0 0 0 8 2zM1 8a69.51 69.51 0 0 0 7 5.5 69.51 69.51 0 0 0 7-5.5 1 1 0 0 0-1-1.5 56.65 56.65 0 0 1-5 2.17A56.65 56.65 0 0 1 2 6.5 1 1 0 0 0 1 8zm2 0a13.89 13.89 0 0 0 3 2.8 57.82 57.82 0 0 0 3 1.7 57.82 57.82 0 0 0 3-1.7A13.89 13.89 0 0 0 13 8a1 1 0 0 0-2 0 11.07 11.07 0 0 1-1.44 2.56 1 1 0 0 0 1.6 1.2A13.89 13.89 0 0 0 8 10a13.89 13.89 0 0 0-4.16-.8 1 1 0 0 0-.32 2 15.93 15.93 0 0 1 8.96 0 1 1 0 0 0 .32-2A13.89 13.89 0 0 0 3 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary btn-block d-block mx-auto" onclick="login()">Login</button>
+                <div class="text-center mt-3">
+                    <a href="forgot_password.html" class="d-block">Forgot Password?</a>
+                </div>
+                <hr class="my-4">
+                <div class="text-center mt-3">
+                    <a href="new account of store.html" class="btn btn-success btn-block">Create New Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var emailOrPhone = document.getElementById('emailOrPhone').value;
+            var password = document.getElementById('password').value;
+
+            if (emailOrPhone.trim() === '' || password.trim() === '') {
+                alert('Please enter both username and password.');
+            } else {
+                // Perform login logic here
+                alert('Login successful!');
+                // Redirect to the desired page
+                window.location.href = 'index.html';
+            }
+        }
+
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            var passwordIcon = document.getElementById('togglePassword');
+            var passwordType = passwordInput.type === 'password' ? 'text' : 'password';
+            var eyeIcon = passwordType === 'password' ? 'bi-eye' : 'bi-eye-slash';
+
+            passwordInput.type = passwordType;
+            passwordIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi ${eyeIcon}" viewBox="0 0 16 16">
+                <path d="M8 2a12 12 0 0 0-7.5 2.69 1 1 0 0 0 1 1.56A10 10 0 0 1 8 4a10 10 0 0 1 6.5 2.25 1 1 0 0 0 1-1.56A12 12 0 0 0 8 2zM1 8a69.51 69.51 0 0 0 7 5.5 69.51 69.51 0 0 0 7-5.5 1 1 0 0 0-1-1.5 56.65 56.65 0 0 1-5 2.17A56.65 56.65 0 0 1 2 6.5 1 1 0 0 0 1 8zm2 0a13.89 13.89 0 0 0 3 2.8 57.82 57.82 0 0 0 3 1.7 57.82 57.82 0 0 0 3-1.7A13.89 13.89 0 0 0 13 8a1 1 0 0 0-2 0 11.07 11.07 0 0 1-1.44 2.56 1 1 0 0 0 1.6 1.2A13.89 13.89 0 0 0 8 10a13.89 13.89 0 0 0-4.16-.8 1 1 0 0 0-.32 2 15.93 15.93 0 0 1 8.96 0 1 1 0 0 0 .32-2A13.89 13.89 0 0 0 3 8z"/>
+            </svg>`;
+        }
+    </script>
+</body>
+</html>

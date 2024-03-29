@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yahya Departmental Store</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
+
+  <style>
+    /* Custom styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .navbar {
+      background-color: black;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .dropdown-menu {
+      border: none;
+      border-radius: 0;
+    }
+
+    .dropdown-item {
+      border: none;
+      border-radius: 0;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #dee2e6;
+    }
+
+    .logo-box {
+      border: 1px solid #343a40; /* Adjust border size */
+      margin: 10px;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 2em;
+    }
+
+    .logo-box i {
+      font-size: 6em;
+      color: #343a40;
+    }
+
+    .footer-logos {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-logos a {
+      flex: 1 0 25%;
+      max-width: 25%;
+      margin: 10px; /* Add margin */
+    }
+
+    /* Additional Styles */
+    .carousel-item img {
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        max-height: 200px;
+      }
+
+      .footer-logos .logo-box i {
+        font-size: 3em;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item img {
+        max-height: 150px;
+      }
+
+      .footer-logos a {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+
+      .logo-box {
+        width: 100px; /* Adjust box width for smaller screens */
+        height: 100px; /* Adjust box height for smaller screens */
+      }
+
+      .logo-box i {
+        font-size: 4em; /* Adjust icon size for smaller screens */
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="store login page.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="fruits_vegetables.html">Fruits and Vegetables</a></li>
+              <li><a class="dropdown-item" href="clothes.html">Clothes</a></li>
+              <li><a class="dropdown-item" href="stationary.html">Stationary</a></li>
+              <li><a class="dropdown-item" href="Toys.html">Toys</a></li>
+              <li><a class="dropdown-item" href="grocery1.html">Groceries</a></li>
+              <li><a class="dropdown-item" href="crocery.html">Crocery</a></li>
+              <li><a class="dropdown-item" href="cosmetics.html">Cosmetics</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+          <h2 class="mb-3">Contact Us</h2>
+          <h3>If you want to make websites like these make sure to contant me .</h3>
+          
+          <input type="hidden" name="access_key" value="637b2841-b8d7-45d7-8b07-bd3be967d50e">
+          
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+        alert('Please fill in all required details.');
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
